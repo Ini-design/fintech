@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fintech App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- SPLASH -->
+<div id="splash" class="screen active">
+  <h1>FinPay</h1>
+  <p>Fast • Secure • Reliable</p>
+</div>
+
+<!-- LOGIN -->
+<div id="login" class="screen">
+  <h2>Welcome Back</h2>
+  <input type="text" id="loginName" placeholder="Enter your name" />
+  <button onclick="login()">Login</button>
+</div>
+
+<!-- DASHBOARD -->
+<div id="dashboard" class="screen">
+  <header>
+    <h3>Hello, <span id="userName"></span></h3>
+    <div class="balance">
+      ₦<span id="balance">0</span>
+    </div>
+  </header>
+
+  <section class="actions">
+    <button onclick="openSend()">Send</button>
+    <button onclick="openTransactions()">Transactions</button>
+    <button onclick="openProfile()">Profile</button>
+  </section>
+
+  <nav class="bottom-nav">
+    <span onclick="showScreen('dashboard')">🏠</span>
+    <span onclick="openSend()">💸</span>
+    <span onclick="openTransactions()">📄</span>
+    <span onclick="openProfile()">👤</span>
+  </nav>
+</div>
+
+<!-- SEND MONEY -->
+<div id="send" class="screen">
+  <h2>Send Money</h2>
+  <input type="number" id="amount" placeholder="Amount" />
+  <button onclick="sendMoney()">Send</button>
+  <button class="back" onclick="showScreen('dashboard')">Back</button>
+</div>
+
+<!-- TRANSACTIONS -->
+<div id="transactions" class="screen">
+  <h2>Transactions</h2>
+  <ul id="txList"></ul>
+  <button class="back" onclick="showScreen('dashboard')">Back</button>
+</div>
+
+<!-- PROFILE -->
+<div id="profile" class="screen">
+  <h2>Profile</h2>
+  <p>Name: <span id="profileName"></span></p>
+  <button onclick="logout()">Logout</button>
+  <button class="back" onclick="showScreen('dashboard')">Back</button>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>

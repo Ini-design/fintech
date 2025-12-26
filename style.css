@@ -1,0 +1,109 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f5f7f6;
+}
+
+.screen {
+  display: none;
+  padding: 20px;
+  min-height: 100vh;
+  animation: fade 0.4s ease;
+}
+
+.screen.active {
+  display: block;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#splash {
+  background: #0bbf6a;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #0bbf6a;
+  color: white;
+  font-size: 16px;
+  border-radius: 6px;
+}
+
+button.back {
+  margin-top: 10px;
+  background: #ccc;
+  color: #000;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.balance {
+  background: #0bbf6a;
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: white;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  border-top: 1px solid #ddd;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: white;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  body {
+    max-width: 420px;
+    margin: auto;
+    background: #eaeaea;
+  }
+}
